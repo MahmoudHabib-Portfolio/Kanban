@@ -5,4 +5,4 @@ export const Store = configureStore({
     reducer: {
         tasks: taskSlice
     }
-})
+});
