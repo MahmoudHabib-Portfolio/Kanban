@@ -1,18 +1,18 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "API integration",
-      "description": "Connect frontend to REST API endpoints.",
+      "title": "API Integeration",
+      "description": "Connect Frontend to REST API endpoints..",
       "priority": "High",
-      "column": "todo"
+      "column": "todo",
+      "id": "1"
     },
     {
-      "id": "2",
       "title": "Unit tests",
       "description": "write tests for utility functions and hooks.",
       "priority": "Medium",
-      "column": "todo"
+      "column": "todo",
+      "id": "2"
     },
     {
       "id": "3",
@@ -53,14 +53,14 @@
       "title": "Dark mode support",
       "description": "Add theme toggle and CSS variable switching.",
       "priority": "Medium",
-      "column": "inReview",
+      "column": "completed",
       "id": "8"
     },
     {
       "title": "Dashboard layout",
       "description": "Build responsive sidebar and main content area.",
       "priority": "Medium",
-      "column": "completed",
+      "column": "inReview",
       "id": "9"
     },
     {

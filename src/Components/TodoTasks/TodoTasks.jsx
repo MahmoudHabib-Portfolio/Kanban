@@ -13,6 +13,7 @@ import { useState } from "react";
 import { remvTask, updateTasks } from "../../ReduxContainer/taskSlice";
 import { useDispatch } from "react-redux";
 import { useDraggable } from "@dnd-kit/core";
+import { RiDragMove2Line } from "react-icons/ri";
 
 /* taskTitle_Field */
 const TaskTitleField = styled(TextField)({
@@ -153,7 +154,7 @@ const style = {
 };
 
   return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+    <div ref={setNodeRef} style={style}>
           <div className={Styles.taskCard} style={{position: "relative"}}>
             <div>
               <div className={Styles.taskTitle}>
@@ -278,6 +279,13 @@ const style = {
               }}
               >
               <HiDotsHorizontal className="text-dotbg text-2xl font-bold" />
+              <div
+              {...listeners}
+              {...attributes}
+              style={{ cursor: "grab", marginLeft:"1em" }}
+              >
+                <RiDragMove2Line />
+              </div>
               </IconButton>
               <Popover
                 id={id}
