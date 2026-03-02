@@ -9,8 +9,11 @@ import {Completed} from '../Components';
 import { useDispatch, useSelector } from "react-redux";
 import { DndContext } from "@dnd-kit/core";
 import { updateTasks } from "../ReduxContainer/taskSlice";
+import { useState } from "react";
 
 const Layout = () => {
+
+  const [search, setSearch] = useState("");
 
   const dispatch = useDispatch();
   const { tasks } = useSelector((state) => state.tasks);
@@ -38,29 +41,29 @@ const Layout = () => {
   return (
      <DndContext onDragEnd={dragEnd}>
       {/* App Nav bar */}
-        <NavBar />
+        <NavBar search={search} setSearch={setSearch} />
         <Divider />
         {/* Tasks Container */}
         <div className={Styles.taskCont}>
               <div>
                 {/* ToDo Tasks */}
               <div>
-                <Todo />
+                <Todo search={search} />
               </div>
               {/* In Progress Tasks */}
               <div>
-                <InProgress />
+                <InProgress search={search} />
               </div>
               </div>
               
               <div>
                 {/* In Review Tasks */}
               <div>
-                <InReview />
+                <InReview search={search} />
               </div>
               {/* Completed Tasks */}
               <div>
-                <Completed />
+                <Completed search={search} />
               </div>
               </div>
         </div>

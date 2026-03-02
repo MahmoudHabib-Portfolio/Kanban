@@ -68,7 +68,7 @@ const style = {
   p: 1,
 };
 
-const InProgress = () => {
+const InProgress = ({search = ""}) => {
 
   /* Add task title & info states */
   const [title, setTaskTitle] = useState("");
@@ -96,7 +96,17 @@ const InProgress = () => {
   const {tasks, loading, error} = useSelector((state) => state.tasks);
 
   /* getting tasks count */
-  const progTasks = tasks.filter((t) => t.column === "inProgress");
+  const progTasks = tasks.filter((t) => {
+  const matchesColumn = t.column === "inProgress";
+
+  const matchesSearch =
+    search.trim() === "" ||
+    t.title?.toLowerCase().includes(search.toLowerCase()) ||
+    t.description?.toLowerCase().includes(search.toLowerCase());
+
+  return matchesColumn && matchesSearch;
+});
+
   const progtaskLength = progTasks.length;
 
   /* Submit Task */

@@ -6,7 +6,6 @@ import { IoGridOutline } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
 
 function AppTitle(){
   return(
@@ -39,9 +38,8 @@ const SearchField = styled(TextField)({
   },
 });
 
-const NavBar = () => {
+const NavBar = ({search, setSearch}) => {
 
-  const [search, setSearch] = useState("");
 
   return (
     <nav className={Styles.mNav}>

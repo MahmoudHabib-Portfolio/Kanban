@@ -69,7 +69,7 @@ const style = {
 };
 
 
-const Todo = () => {
+const Todo = ({ search = "" }) => {
   
   /* Add task title & info states */
   const [title, setTaskTitle] = useState("");
@@ -97,7 +97,17 @@ const Todo = () => {
   const {tasks, loading, error} = useSelector((state) => state.tasks);
 
   /* getting tasks count */
-  const todoTasks = tasks.filter((t) => t.column === "todo");
+  const todoTasks = tasks.filter((t) => {
+  const matchesColumn = t.column === "todo";
+
+  const matchesSearch =
+    search.trim() === "" ||
+    t.title?.toLowerCase().includes(search.toLowerCase()) ||
+    t.description?.toLowerCase().includes(search.toLowerCase());
+
+  return matchesColumn && matchesSearch;
+});
+
   const taskLength = todoTasks.length;
 
   /* Submit Task */

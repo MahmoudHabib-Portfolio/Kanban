@@ -68,7 +68,7 @@ const style = {
   p: 1,
 };
 
-const InReview = () => {
+const InReview = ({search = ""}) => {
 
   /* Add task title & info states */
   const [title, setTaskTitle] = useState("");
@@ -96,7 +96,17 @@ const InReview = () => {
   const {tasks, loading, error} = useSelector((state) => state.tasks);
 
   /* getting tasks count */
-  const revTasks = tasks.filter((t) => t.column === "inReview");
+  const revTasks = tasks.filter((t) => {
+  const matchesColumn = t.column === "inReview";
+
+  const matchesSearch =
+    search.trim() === "" ||
+    t.title?.toLowerCase().includes(search.toLowerCase()) ||
+    t.description?.toLowerCase().includes(search.toLowerCase());
+
+  return matchesColumn && matchesSearch;
+});
+  
   const revtaskLength = revTasks.length;
 
   /* Submit Task */

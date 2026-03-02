@@ -68,7 +68,7 @@ const style = {
   p: 1,
 };
 
-const Completed = () => {
+const Completed = ({search = ""}) => {
 
   /* Add task title & info states */
   const [title, setTaskTitle] = useState("");
@@ -96,7 +96,17 @@ const Completed = () => {
   const {tasks, loading, error} = useSelector((state) => state.tasks);
 
   /* getting tasks count */
-  const compTasks = tasks.filter((t) => t.column === "completed");
+  const compTasks = tasks.filter((t) => {
+  const matchesColumn = t.column === "completed";
+
+  const matchesSearch =
+    search.trim() === "" ||
+    t.title?.toLowerCase().includes(search.toLowerCase()) ||
+    t.description?.toLowerCase().includes(search.toLowerCase());
+
+  return matchesColumn && matchesSearch;
+});
+  
   const comptaskLength = compTasks.length;
 
   /* Submit Task */
