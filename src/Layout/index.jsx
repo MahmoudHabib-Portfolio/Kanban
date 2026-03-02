@@ -8,7 +8,7 @@ import {InReview} from '../Components';
 import {Completed} from '../Components';
 import { useDispatch, useSelector } from "react-redux";
 import { DndContext } from "@dnd-kit/core";
-import { updateTasks } from "../ReduxContainer/taskSlice";
+import { updateTasks } from "../Redux/taskSlice";
 import { useState } from "react";
 
 const Layout = () => {

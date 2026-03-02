@@ -11,9 +11,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { styled } from "@mui/material/styles";
 import TodoTasks from './TodoTasks';
-import { addTask } from '../../ReduxContainer/taskSlice';
+import { addTask } from '../../Redux/taskSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchTasks} from "../../ReduxContainer/taskSlice";
+import {fetchTasks} from "../../Redux/taskSlice";
 import { useDroppable } from '@dnd-kit/core';
 
 /* taskTitle_Field */

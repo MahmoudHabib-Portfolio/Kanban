@@ -10,9 +10,9 @@ import Modal from '@mui/material/Modal';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { styled } from "@mui/material/styles";
-import { addTask } from '../../ReduxContainer/taskSlice';
+import { addTask } from '../../Redux/taskSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchTasks} from "../../ReduxContainer/taskSlice";
+import {fetchTasks} from "../../Redux/taskSlice";
 import InProgTasks from './InProgTasks';
 import { useDroppable } from '@dnd-kit/core';
 

@@ -10,7 +10,7 @@ import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import Chip from '@mui/material/Chip';
 import { useState } from "react";
-import { remvTask, updateTasks } from "../../ReduxContainer/taskSlice";
+import { remvTask, updateTasks } from "../../Redux/taskSlice";
 import { useDispatch } from "react-redux";
 import { useDraggable } from "@dnd-kit/core";
 import { RiDragMove2Line } from "react-icons/ri";
