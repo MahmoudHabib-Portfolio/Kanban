@@ -28,11 +28,11 @@ const Layout = () => {
 
     const task = tasks.find((t) => t.id === taskId);
 
-    if (task && task.column !== newColumn) {
+    if (task && task.colmn !== newColumn) {
       dispatch(
         updateTasks({
           ...task,
-          column: newColumn,
+          colmn: newColumn,
         })
       );
     }

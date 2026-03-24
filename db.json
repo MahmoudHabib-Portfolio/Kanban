@@ -4,14 +4,14 @@
       "title": "API Integeration",
       "description": "Connect Frontend to REST API endpoints..",
       "priority": "High",
-      "column": "todo",
+      "colmn": "todo",
       "id": "1"
     },
     {
       "title": "Unit tests",
       "description": "write tests for utility functions and hooks.",
       "priority": "Medium",
-      "column": "todo",
+      "colmn": "todo",
       "id": "2"
     },
     {
@@ -19,20 +19,20 @@
       "title": "Performance audit",
       "description": "Lighthouse scores and bundle analysis",
       "priority": "Low",
-      "column": "todo"
+      "colmn": "todo"
     },
     {
       "id": "4",
       "title": "Notification system",
       "description": "Toast notifications and in-app alerts",
       "priority": "Medium",
-      "column": "todo"
+      "colmn": "todo"
     },
     {
       "title": "User settings page",
       "description": "Profile editing, preferences, and account management.",
       "priority": "Medium",
-      "column": "inProgress",
+      "colmn": "inProgress",
       "id": "5"
     },
     {
@@ -40,34 +40,34 @@
       "title": "Authentication flow",
       "description": "Implement login, signup, and password reset screens",
       "priority": "High",
-      "column": "inProgress"
+      "colmn": "inProgress"
     },
     {
       "title": "File upload component",
       "description": "Drag and drop file upload with preview.",
       "priority": "Medium",
-      "column": "todo",
+      "colmn": "todo",
       "id": "11"
     },
     {
       "title": "Dark mode support",
       "description": "Add theme toggle and CSS variable switching.",
       "priority": "Medium",
-      "column": "completed",
+      "colmn": "completed",
       "id": "8"
     },
     {
       "title": "Dashboard layout",
       "description": "Build responsive sidebar and main content area.",
       "priority": "Medium",
-      "column": "inReview",
+      "colmn": "inReview",
       "id": "9"
     },
     {
       "title": "Design system tokens",
       "description": "Set up color palette, typography, and spacing scales.",
       "priority": "High",
-      "column": "inReview",
+      "colmn": "inReview",
       "id": "16"
     }
   ]
