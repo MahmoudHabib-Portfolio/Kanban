@@ -134,7 +134,7 @@ const id = Open ? 'simple-popover' : undefined;
       title: tskTitle,
       description: tskInfo,
       priority: task.priority,
-      column: task.column
+      colmn: task.colmn
     }));
     setEdit(false);
   }

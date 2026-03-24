@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 /* fetchTasks via Redux AsyncThunk */
 export const fetchTasks = createAsyncThunk("tasks/fetchTasks", async () => {
-    const res = await fetch("http://localhost:4000/tasks");
+    const res = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:B2agUtKJ/tasks");
     const data = await res.json();
     return data;
 });
 
 /* add_Tasks */
 export const addTask = createAsyncThunk("tasks/addTask", async (task) => {
-    const res = await fetch("http://localhost:4000/tasks", {
+    const res = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:B2agUtKJ/tasks", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -21,8 +21,8 @@ export const addTask = createAsyncThunk("tasks/addTask", async (task) => {
 });
 
 /* update_Tasks */
-export const updateTasks = createAsyncThunk("tasks/editTask", async({ id, title, description, priority, column }) => {
-    const res = await fetch(`http://localhost:4000/tasks/${id}`, {
+export const updateTasks = createAsyncThunk("tasks/editTask", async({ id, title, description, priority, colmn }) => {
+    const res = await fetch(`https://x8ki-letl-twmt.n7.xano.io/api:B2agUtKJ/tasks/${id}`, {
         method: "PUT",
         headers: {
             'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ export const updateTasks = createAsyncThunk("tasks/editTask", async({ id, title,
             title,
             description,
             priority, 
-            column
+            colmn
         }),
     });
 
@@ -40,7 +40,7 @@ export const updateTasks = createAsyncThunk("tasks/editTask", async({ id, title,
 
 /* remove_Tasks */
 export const remvTask = createAsyncThunk("tasks/removeTasks", async(id) => {
-    await fetch(`http://localhost:4000/tasks/${id}`, {
+    await fetch(`https://x8ki-letl-twmt.n7.xano.io/api:B2agUtKJ/tasks/${id}`, {
         method: 'DELETE',
     });
     return id;

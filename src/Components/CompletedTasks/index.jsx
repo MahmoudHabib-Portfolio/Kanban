@@ -76,7 +76,7 @@ const Completed = ({search = ""}) => {
   /* Task_priority_state */
   const [priority, setTaskPriot] = useState("");
   /* Task_Column */
-  const [column, setColumn] = useState("");
+  const [colmn, setColumn] = useState("");
 
   /* open modal toggle */
   const [open, setOpen] = useState(false);
@@ -97,7 +97,7 @@ const Completed = ({search = ""}) => {
 
   /* getting tasks count */
   const compTasks = tasks.filter((t) => {
-  const matchesColumn = t.column === "completed";
+  const matchesColumn = t.colmn === "completed";
 
   const matchesSearch =
     search.trim() === "" ||
@@ -113,7 +113,7 @@ const Completed = ({search = ""}) => {
   const submitTask = (e) => {
     e.preventDefault();
 
-    dispatch(addTask({title, description, priority, column}));
+    dispatch(addTask({title, description, priority, colmn}));
 
     /* Reset_task_Fields */
     setTaskTitle("");
@@ -278,7 +278,7 @@ const Completed = ({search = ""}) => {
                     <span className={Styles.taskTitle}><b>Task Status</b></span>
                     <br />
                       <Select
-                      value={column}
+                      value={colmn}
                       onChange={(e) => setColumn(e.target.value)}
                       displayEmpty
                       inputProps={{ 'aria-label': 'Without label' }}
